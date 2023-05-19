@@ -5,7 +5,7 @@ from Projeto import app, database as db, bcrypt
 from flask_login import login_user, login_required, logout_user
 import pandas as pd
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     form_login = LoginForm()
     form_criar_conta = CriarContaForm()
@@ -96,7 +96,7 @@ def webhook():
     else:
         return abort(400)
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/inicio', methods=['GET','POST'])
 @login_required
 def inicio():
     dados = db.session.query(Atualizacoes).all()
