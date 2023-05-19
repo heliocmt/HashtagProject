@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+     {% include 'navbar.html' %}
+
+     <div class='container'>
+        <h1>Atualizações de Pagamento:</h1>
+        <div class='container filtro'>
+            <form method="post" action="/inicio">
+                <label for="filtro_email">Filtrar por Email:</label>
+                <input type="text" id="filtro_email" name="filtro_email">
+                <button type="submit">Filtrar</button>
+                <button type="button" onclick="window.location.href='/inicio'">Redefinir Busca</button>
+            </form>
+        </div>
+     </div>
+     <div class='containertabela tabela'>
+        {{ tabela_html | safe }}
+     </div>
+
+{% endblock %}

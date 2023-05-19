@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Hashtag</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/fotos-gratis/fundo-de-papel-de-parede-colorido-desfocado-vivido_58702-3767.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        center {
+            margin-top: 30px;
+        }
+
+        .tabela{
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 65%;
+            }
+
+        .filtro{
+            text-align: center;
+            margin-top: 30px;
+            }
+
+        .containertabela {
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .botoes {
+            justify-content: center;
+        }
+
+
+        h1 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+    </style>
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <div class ='container'>
+        {% with mensagens = get_flashed_messages(with_categories=True) %}
+            {% if mensagens %}
+                {% for categoria, mensagem in mensagens %}
+                    <div class="alert {{ categoria }}">
+                        {{ mensagem }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>
