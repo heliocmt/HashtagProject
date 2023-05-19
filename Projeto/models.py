@@ -9,8 +9,8 @@ class Usuario(db.Model, UserMixin):
     __table_args__ = {'extend_existing': True}
     __tablename__= 'usuario'
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(40), unique=True, nullable=False)
-    senha = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(200), unique=True, nullable=False)
+    senha = db.Column(db.String(200), nullable=False)
 
 class Atualizacoes(db.Model, UserMixin):
     __table_args__ = {'extend_existing': True}
