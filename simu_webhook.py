@@ -30,7 +30,8 @@
     "    status_list = ['aprovado', 'recusado', 'reembolsado']\n",
     "    status = random.choice(status_list)\n",
     "\n",
-    "    valor = random.randint(1, 1000)\n",
+    "    valor_aleatorio = random.uniform(0, 1000)
+         valor = "{:,.2f}".format(valor_aleatorio)
     "\n",
     "    forma_pagamento = ['boleto', 'pix', 'cartao de credito']\n",
     "    forma_pagamento = random.choice(forma_pagamento)\n",
