@@ -39,7 +39,7 @@ def login():
         codigo = form_criar_conta.codigo.data
         redirect('/inicio')
         if codigo == 'uhdfaAADF123':
-            senha_cript = bcrypt.generate_password_hash(senha)
+            senha_cript = bcrypt.generate_password_hash(senha).decode("utf-8")
             usuario = Usuario(email=email, senha=senha_cript)
             db.session.add(usuario)
             db.session.commit()
